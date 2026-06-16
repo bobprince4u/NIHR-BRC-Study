@@ -41,7 +41,7 @@
         padding: 36px 16px 60px;
       }
       .page-header {
-        max-width: 800px;
+        max-width: 760px;
         margin: 0 auto 24px;
         display: flex;
         align-items: center;
@@ -60,20 +60,12 @@
         padding: 5px 12px;
         border-radius: 999px;
         border: 1.5px solid;
-      }
-      .mode-badge.coordinator {
-        background: #eef4fa;
-        color: var(--navy);
-        border-color: #b0cae0;
-      }
-      .mode-badge.investigator {
         background: #f0fdf4;
         color: var(--success);
         border-color: #86efac;
       }
-
       .card {
-        max-width: 800px;
+        max-width: 760px;
         margin: 0 auto;
         background: var(--white);
         border: 1px solid var(--border);
@@ -104,284 +96,47 @@
         color: rgba(255, 255, 255, 0.5);
       }
 
-      /* Two-column layout for coordinator+investigator fields side by side */
-      .form-columns {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 0;
-      }
-      .form-col {
-        padding: 28px 28px;
-      }
-      .form-col.coordinator-col {
+      /* COORDINATOR PANEL */
+      .coordinator-panel {
         background: #eef4fa;
-        border-right: 1px solid var(--border);
-      }
-      .form-col.investigator-col {
-        background: #f9fffe;
-      }
-      .col-header {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        margin-bottom: 18px;
-        padding-bottom: 12px;
-        border-bottom: 2px solid;
-      }
-      .coordinator-col .col-header {
-        border-color: var(--navy);
-      }
-      .investigator-col .col-header {
-        border-color: var(--success);
-      }
-      .col-badge {
-        font-size: 10px;
-        font-weight: 700;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        padding: 3px 10px;
-        border-radius: 999px;
-      }
-      .coordinator-col .col-badge {
-        background: var(--navy);
-        color: #fff;
-      }
-      .investigator-col .col-badge {
-        background: var(--success);
-        color: #fff;
-      }
-      .col-title {
-        font-size: 13px;
-        font-weight: 600;
-        color: var(--text);
-      }
-      .col-sub {
-        font-size: 11px;
-        color: var(--muted);
-        margin-top: 2px;
-      }
-
-      @media (max-width: 640px) {
-        .form-columns {
-          grid-template-columns: 1fr;
-        }
-        .form-col {
-          padding: 20px 18px;
-        }
-        .form-col.coordinator-col {
-          border-right: none;
-          border-bottom: 1px solid var(--border);
-        }
-      }
-
-      .section-label {
-        font-size: 10px;
-        font-weight: 700;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        color: var(--gold);
-        margin-bottom: 10px;
-        margin-top: 20px;
-        padding-bottom: 6px;
         border-bottom: 1px solid var(--border);
+        padding: 20px 32px;
       }
-      .section-label:first-child {
-        margin-top: 0;
-      }
-
-      .field {
-        display: flex;
-        flex-direction: column;
-        gap: 4px;
-        margin-bottom: 14px;
-      }
-      .field:last-child {
-        margin-bottom: 0;
-      }
-      .field label {
-        font-size: 12px;
-        font-weight: 600;
-        color: var(--navy);
-      }
-      .field .hint {
-        font-size: 11px;
-        color: var(--muted);
-        font-weight: 400;
-        line-height: 1.4;
-      }
-
-      input[type="text"],
-      input[type="number"],
-      input[type="email"],
-      select,
-      textarea {
-        width: 100%;
-        padding: 9px 12px;
-        border: 1.5px solid var(--border);
-        border-radius: 7px;
-        font-family: "DM Sans", sans-serif;
-        font-size: 13px;
-        color: var(--text);
-        background: var(--white);
-        outline: none;
-        transition: border-color 0.15s;
-      }
-      input:focus,
-      select:focus,
-      textarea:focus {
-        border-color: var(--navy);
-      }
-      textarea {
-        resize: vertical;
-        min-height: 90px;
-        line-height: 1.6;
-      }
-      select {
-        cursor: pointer;
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235A6A7E' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-        background-repeat: no-repeat;
-        background-position: right 12px center;
-        padding-right: 36px;
-        -webkit-appearance: none;
-        appearance: none;
-      }
-
-      .word-count {
-        text-align: right;
-        font-size: 11px;
-        color: var(--muted);
-        margin-top: 2px;
-      }
-      .word-count.over {
-        color: var(--danger);
-        font-weight: 600;
-      }
-
-      .radio-group {
-        display: flex;
-        gap: 8px;
-        flex-wrap: wrap;
-        margin-top: 5px;
-      }
-      .radio-pill {
-        display: flex;
-        align-items: center;
-        gap: 6px;
-        padding: 7px 13px;
-        border: 1.5px solid var(--border);
-        border-radius: 7px;
-        cursor: pointer;
-        font-size: 12px;
-        color: var(--muted);
-        transition: all 0.15s;
-        user-select: none;
-        background: var(--white);
-      }
-      .radio-pill:hover {
-        border-color: var(--navy);
-        color: var(--text);
-      }
-      .radio-pill input[type="radio"] {
-        accent-color: var(--navy);
-        width: 14px;
-        height: 14px;
-      }
-      .radio-pill.selected {
-        border-color: var(--navy);
-        background: #eef4fa;
-        color: var(--navy);
-        font-weight: 500;
-      }
-
-      /* UKCRC */
-      .ukcrc-tags {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 5px;
-        margin-top: 8px;
-        min-height: 24px;
-      }
-      .ukcrc-tag {
-        display: inline-flex;
-        align-items: center;
-        gap: 4px;
-        padding: 3px 9px;
-        border-radius: 999px;
-        font-size: 11px;
-        font-weight: 500;
-      }
-      .ukcrc-tag.primary {
-        background: #003865;
-        color: #fff;
-      }
-      .ukcrc-tag.secondary {
-        background: #dbeafe;
-        color: #1e3a5f;
-      }
-      .ukcrc-tag-label {
-        font-size: 8px;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 0.08em;
-        opacity: 0.7;
-        margin-right: 2px;
-      }
-
-      /* recruits nested */
-      .nested-box {
-        background: var(--white);
-        border: 1px solid var(--border);
-        border-radius: 8px;
-        padding: 14px 16px;
-      }
-      .recruits-count {
-        margin-top: 10px;
-        padding-top: 10px;
-        border-top: 1px solid var(--border);
-        display: none;
-      }
-
-      /* Divider between col sections */
-      .full-width-section {
-        padding: 20px 28px;
-        border-top: 1px solid var(--border);
-      }
-      .full-width-section .section-label {
-        margin-top: 0;
-      }
-
-      /* Generate & send panel */
-      .generate-panel {
-        background: var(--warn-bg);
-        border-top: 2px solid var(--warn-bd);
-        padding: 20px 28px;
-      }
-      .generate-panel h3 {
+      .coordinator-panel h3 {
         font-size: 13px;
         font-weight: 600;
-        color: #92400e;
+        color: var(--navy);
         margin-bottom: 4px;
       }
-      .generate-panel p {
+      .coordinator-panel p {
         font-size: 12px;
-        color: #92400e;
+        color: var(--muted);
         margin-bottom: 14px;
         line-height: 1.5;
-        opacity: 0.85;
       }
-      .generate-row {
+      .inline-row {
         display: flex;
         gap: 10px;
-        align-items: center;
-        flex-wrap: wrap;
+        align-items: flex-end;
+      }
+      .inline-row .field {
+        flex: 1;
       }
       .link-box {
-        background: #fff;
+        background: var(--warn-bg);
         border: 1.5px solid var(--warn-bd);
         border-radius: 8px;
         padding: 14px 16px;
         margin-top: 14px;
         display: none;
+      }
+      .link-box-label {
+        font-size: 11px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: #92400e;
+        margin-bottom: 8px;
       }
       .link-copy-row {
         display: flex;
@@ -393,7 +148,7 @@
         padding: 8px 12px;
         font-size: 12px;
         font-family: monospace;
-        background: #fff8e7;
+        background: #fff;
         border: 1px solid var(--warn-bd);
         border-radius: 6px;
         color: var(--text);
@@ -485,10 +240,243 @@
         font-weight: 500;
       }
 
-      /* Investigator submit footer */
+      /* PROJECT BAND */
+      .project-band {
+        background: #f0f7ff;
+        border-bottom: 1px solid var(--border);
+        padding: 14px 32px;
+        display: flex;
+        gap: 8px;
+        align-items: flex-start;
+      }
+      .project-band-label {
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--navy);
+        white-space: nowrap;
+        padding-top: 1px;
+      }
+      .project-band-title {
+        font-size: 13px;
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      /* FORM */
+      .form-body {
+        padding: 28px 32px;
+      }
+      .section-label {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 14px;
+        margin-top: 26px;
+        padding-bottom: 8px;
+        border-bottom: 1px solid var(--border);
+      }
+      .section-label:first-child {
+        margin-top: 0;
+      }
+      .grid-3 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 14px;
+      }
+      .grid-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+      @media (max-width: 560px) {
+        .grid-3,
+        .grid-2 {
+          grid-template-columns: 1fr;
+        }
+        .form-body,
+        .card-head,
+        .coordinator-panel,
+        .card-footer,
+        .project-band {
+          padding-left: 18px;
+          padding-right: 18px;
+        }
+        .inline-row {
+          flex-direction: column;
+        }
+      }
+      .field {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+      .field label {
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--navy);
+      }
+      .field .hint {
+        font-size: 11px;
+        color: var(--muted);
+        font-weight: 400;
+        line-height: 1.4;
+      }
+      input[type="text"],
+      input[type="number"],
+      input[type="email"],
+      select,
+      textarea {
+        width: 100%;
+        padding: 10px 13px;
+        border: 1.5px solid var(--border);
+        border-radius: 7px;
+        font-family: "DM Sans", sans-serif;
+        font-size: 14px;
+        color: var(--text);
+        background: var(--input-bg);
+        outline: none;
+        transition: border-color 0.15s;
+      }
+      input:focus,
+      select:focus,
+      textarea:focus {
+        border-color: var(--navy);
+        background: #fff;
+      }
+      textarea {
+        resize: vertical;
+        min-height: 110px;
+        line-height: 1.6;
+      }
+      select {
+        cursor: pointer;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235A6A7E' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 12px center;
+        padding-right: 36px;
+        -webkit-appearance: none;
+        appearance: none;
+      }
+      .word-count {
+        text-align: right;
+        font-size: 11px;
+        color: var(--muted);
+        margin-top: 3px;
+      }
+      .word-count.over {
+        color: var(--danger);
+        font-weight: 600;
+      }
+      .radio-group {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 6px;
+      }
+      .radio-pill {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 9px 16px;
+        border: 1.5px solid var(--border);
+        border-radius: 7px;
+        cursor: pointer;
+        font-size: 13px;
+        color: var(--muted);
+        transition: all 0.15s;
+        user-select: none;
+        background: var(--input-bg);
+      }
+      .radio-pill:hover {
+        border-color: var(--navy);
+        color: var(--text);
+      }
+      .radio-pill input[type="radio"] {
+        accent-color: var(--navy);
+        width: 15px;
+        height: 15px;
+      }
+      .radio-pill.selected {
+        border-color: var(--navy);
+        background: #eef4fa;
+        color: var(--navy);
+        font-weight: 500;
+      }
+      .nested-box {
+        background: #f8fafc;
+        border: 1px solid var(--border);
+        border-radius: 9px;
+        padding: 18px 20px;
+      }
+      .nested-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+      .nested-label {
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--navy);
+      }
+      .recruits-count {
+        margin-top: 14px;
+        padding-top: 14px;
+        border-top: 1px solid var(--border);
+        display: none;
+      }
+
+      /* UKCRC */
+      .ukcrc-secondary {
+        display: flex;
+        gap: 12px;
+        margin-top: 12px;
+        flex-wrap: wrap;
+      }
+      .ukcrc-secondary .field {
+        flex: 1;
+        min-width: 200px;
+      }
+      .ukcrc-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 10px;
+        min-height: 28px;
+      }
+      .ukcrc-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        padding: 3px 10px;
+        border-radius: 999px;
+        font-size: 11px;
+        font-weight: 500;
+      }
+      .ukcrc-tag.primary {
+        background: #003865;
+        color: #fff;
+      }
+      .ukcrc-tag.secondary {
+        background: #dbeafe;
+        color: #1e3a5f;
+      }
+      .ukcrc-tag-label {
+        font-size: 8px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        opacity: 0.7;
+        margin-right: 2px;
+      }
+
+      /* FOOTER */
       .card-footer {
         border-top: 1px solid var(--border);
-        padding: 16px 28px;
+        padding: 18px 32px;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -499,7 +487,7 @@
       .footer-msg {
         font-size: 12px;
         color: var(--muted);
-        max-width: 380px;
+        max-width: 400px;
         line-height: 1.5;
       }
       .footer-msg.success {
@@ -512,12 +500,12 @@
       }
       .btn-row {
         display: flex;
-        gap: 8px;
+        gap: 10px;
         align-items: center;
         flex-wrap: wrap;
       }
       .btn {
-        padding: 9px 16px;
+        padding: 10px 18px;
         border-radius: 7px;
         font-family: "DM Sans", sans-serif;
         font-size: 13px;
@@ -544,43 +532,11 @@
         background: var(--navy2);
         border-color: var(--navy2);
       }
-
-      /* Project band in investigator mode */
-      .project-band {
-        background: #f0f7ff;
-        border-bottom: 1px solid var(--border);
-        padding: 12px 28px;
-        display: flex;
-        gap: 8px;
-        align-items: flex-start;
+      .btn-primary svg {
+        width: 15px;
+        height: 15px;
+        flex-shrink: 0;
       }
-      .project-band-label {
-        font-size: 12px;
-        font-weight: 600;
-        color: var(--navy);
-        white-space: nowrap;
-        padding-top: 1px;
-      }
-      .project-band-title {
-        font-size: 13px;
-        color: var(--muted);
-        line-height: 1.6;
-      }
-
-      /* Prefilled field indicator */
-      .prefilled {
-        background: #f0f7ff !important;
-        border-color: #b0cae0 !important;
-        color: var(--navy) !important;
-      }
-      .prefilled-note {
-        font-size: 10px;
-        color: var(--navy);
-        font-weight: 600;
-        margin-top: 2px;
-        letter-spacing: 0.05em;
-      }
-
       .page-footer {
         text-align: center;
         margin-top: 24px;
@@ -591,6 +547,13 @@
         color: var(--navy);
         font-weight: 500;
         text-decoration: none;
+      }
+      .coordinator-idle {
+        padding: 32px;
+        text-align: center;
+        color: var(--muted);
+        font-size: 13px;
+        border-top: 1px solid var(--border);
       }
     </style>
   </head>
@@ -603,75 +566,152 @@
       />
       <div class="mode-badge coordinator" id="mode-badge">Coordinator</div>
     </header>
+
     <div class="card">
       <div class="card-head">
         <div class="card-head-label">NIHR BRC Annual Reporting</div>
         <div class="card-head-title">Study Information Request Form</div>
         <div class="card-head-sub">
-          Coordinator fills in known fields, then generates a link for the
-          investigator to complete the rest.
+          Required for annual reporting back to the NIHR. Identified for
+          inclusion in BRC reporting where PI or Co-I receive BRC funding.
         </div>
       </div>
 
-      <!-- PROJECT BAND (investigator mode only) -->
-      <div class="project-band" id="project-band" style="display: none">
-        <span class="project-band-label">Project:</span>
-        <span class="project-band-title" id="project-band-text"></span>
+      <!-- COORDINATOR PANEL -->
+      <div class="coordinator-panel" id="coordinator-panel">
+        <h3>Coordinator — Set up &amp; send this form</h3>
+        <p>
+          Fill in all the information you have below, then click
+          <strong>Generate Link</strong>. The investigator opens the link, sees
+          your pre-filled information, edits or adds anything needed, and clicks
+          Submit to send back to you.
+        </p>
+        <button
+          class="btn btn-primary"
+          onclick="generateLink()"
+          style="height: 40px"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244"
+            />
+          </svg>
+          Generate Link
+        </button>
+        <div class="link-box" id="link-box">
+          <div class="link-box-label">Send to Investigator</div>
+          <div class="link-copy-row">
+            <input type="text" class="link-url" id="link-url" readonly />
+            <button class="btn-copy" id="btn-copy" onclick="copyLink()">
+              Copy link
+            </button>
+          </div>
+          <div class="link-hint">
+            All pre-filled information is encoded in the link. Enter the
+            investigator's email and click Send.
+          </div>
+          <div class="send-row">
+            <label for="inv-to-email">Investigator email:</label>
+            <input
+              type="email"
+              id="inv-to-email"
+              placeholder="researcher@leeds.ac.uk"
+            />
+            <button class="btn-send" onclick="sendToInvestigator()">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"
+                />
+              </svg>
+              Send
+            </button>
+          </div>
+          <div class="send-confirm" id="send-confirm">
+            ✓ Email client opened — check your email app to send.
+          </div>
+        </div>
       </div>
 
-      <!-- Investigator instructions banner -->
+      <!-- INVESTIGATOR BANNER -->
       <div
         id="inv-banner"
         style="
           display: none;
           background: #fff8e7;
           border-bottom: 1.5px solid #f59e0b;
-          padding: 12px 28px;
+          padding: 12px 32px;
           font-size: 13px;
           color: #92400e;
           line-height: 1.6;
         "
       >
         <strong>&#9993; How to submit:</strong> Fields pre-filled by the
-        coordinator are shown in blue — please review them. Complete the
-        remaining fields, then click
-        <strong>Send to Leeds BRC via Email</strong>. Your email app will open
-        ready to send.
+        coordinator can be edited if needed. Complete any remaining empty
+        fields, then click <strong>Send to Leeds BRC via Email</strong>.
       </div>
 
-      <!-- TWO-COLUMN FORM -->
-      <div class="form-columns">
-        <!-- LEFT: COORDINATOR -->
-        <div class="form-col coordinator-col">
-          <div class="col-header">
-            <span class="col-badge">Coordinator</span>
-            <div>
-              <div class="col-title">You fill in</div>
-              <div class="col-sub">Information you already have</div>
-            </div>
-          </div>
+      <!-- SINGLE FORM (everyone sees this) -->
+      <div class="form-body" id="main-form">
+        <!-- PROJECT IDENTIFICATION -->
+        <div class="section-label" style="margin-top: 24px">
+          Project Identification
+        </div>
+        <div class="field">
+          <label for="grant-ref">Grant / Local Reference Number</label>
+          <span class="hint"
+            >BRC grant or local reference number if available</span
+          >
+          <input type="text" id="grant-ref" placeholder="e.g. BRC-2025-001" />
+        </div>
+        <div class="field" style="margin-top: 14px">
+          <label for="short-title">Short Project Title</label>
+          <span class="hint">A brief working title for the project</span>
+          <input
+            type="text"
+            id="short-title"
+            placeholder="e.g. CARDIO-RISK Study"
+          />
+        </div>
+        <div class="field" style="margin-top: 14px">
+          <label for="project-title-input"
+            >Full Project Title
+            <span style="color: var(--danger)">*</span></label
+          >
+          <span class="hint">Full official title as registered</span>
+          <input
+            type="text"
+            id="project-title-input"
+            placeholder="Enter full project title..."
+          />
+        </div>
 
-          <div class="section-label">Project Title</div>
-          <div class="field">
-            <label for="project-title-input"
-              >Project title <span style="color: var(--danger)">*</span></label
-            >
-            <input
-              type="text"
-              id="project-title-input"
-              placeholder="Enter full project title..."
-            />
-          </div>
-
-          <div class="section-label">Registration IDs</div>
+        <!-- REGISTRATION IDs -->
+        <div class="section-label" style="margin-top: 24px">
+          Registration IDs
+        </div>
+        <div class="grid-3">
           <div class="field">
             <label for="iras">IRAS ID</label>
-            <span class="hint">If available</span>
+            <span class="hint">If applicable</span>
             <input type="text" id="iras" placeholder="e.g. 123456" />
           </div>
           <div class="field">
             <label for="cpms">CPMS ID</label>
-            <span class="hint">If available</span>
+            <span class="hint">If applicable</span>
             <input type="text" id="cpms" placeholder="e.g. 56789" />
           </div>
           <div class="field">
@@ -679,12 +719,60 @@
             <span class="hint">NHS REC or local UoL REC</span>
             <input type="text" id="rec" placeholder="e.g. 22/NW/0001" />
           </div>
+        </div>
 
-          <div class="section-label">Project Details</div>
+        <!-- PROJECT SUMMARY -->
+        <div class="section-label" style="margin-top: 24px">
+          Project Summary
+        </div>
+        <div class="field">
+          <label for="summary">Project summary</label>
+          <span class="hint"
+            >300 word summary (if not available via HRA or RDN CPMS)</span
+          >
+          <textarea
+            id="summary"
+            placeholder="Enter a project summary of up to 300 words..."
+          ></textarea>
+          <div class="word-count" id="word-count">0 / 300 words</div>
+        </div>
+
+        <!-- PROJECT DETAILS -->
+        <div class="section-label" style="margin-top: 24px">
+          Project Details
+        </div>
+        <div class="grid-2">
+          <div class="field">
+            <label>Is the project sensitive?</label>
+            <span class="hint"
+              >Y = commercially sensitive or not-for-public-release</span
+            >
+            <div class="radio-group">
+              <label class="radio-pill" id="pill-sens-y"
+                ><input
+                  type="radio"
+                  name="sensitive"
+                  value="Y"
+                  onchange="updatePills('sensitive')"
+                />
+                Yes</label
+              >
+              <label class="radio-pill" id="pill-sens-n"
+                ><input
+                  type="radio"
+                  name="sensitive"
+                  value="N"
+                  onchange="updatePills('sensitive')"
+                />
+                No</label
+              >
+            </div>
+          </div>
           <div class="field">
             <label for="status">Project status</label>
-            <select id="status">
-              <option value="">— Select if known —</option>
+            <span class="hint">Select the current status</span>
+            <select id="status" style="margin-top: 6px">
+              <option value="">— Please select —</option>
               <option>In setup</option>
               <option>Open / active / in follow up</option>
               <option>Completed and closed</option>
@@ -692,11 +780,30 @@
               <option>Withdrawn</option>
             </select>
           </div>
+        </div>
 
-          <div class="section-label">UKCRC Health Category</div>
+        <!-- UKCRC HEALTH CATEGORY -->
+        <div class="section-label" style="margin-top: 24px">
+          UKCRC Health Category
+        </div>
+        <div class="nested-box">
+          <div
+            style="
+              font-size: 12px;
+              color: var(--muted);
+              margin-bottom: 14px;
+              line-height: 1.5;
+            "
+          >
+            Select the primary category, then optionally up to 2 secondary
+            categories. Maximum 3 selections, no duplicates.
+          </div>
           <div class="field">
-            <label for="ukcrc-primary">Primary category</label>
-            <span class="hint">Select if known; investigator can update</span>
+            <label for="ukcrc-primary"
+              >Primary category
+              <span style="color: var(--danger)">*</span></label
+            >
+            <span class="hint">The main health area this study addresses</span>
             <select id="ukcrc-primary" onchange="ukcrcUpdate()">
               <option value="">— Select primary category —</option>
               <option>Blood</option>
@@ -722,33 +829,45 @@
               <option>Disputed Aetiology and Other</option>
             </select>
           </div>
-          <div class="field" id="ukcrc-sec1-wrap" style="display: none">
-            <label for="ukcrc-sec1"
-              >Secondary category 1
-              <span style="color: var(--muted); font-weight: 400"
-                >(optional)</span
-              ></label
-            >
-            <select id="ukcrc-sec1" onchange="ukcrcUpdate()">
-              <option value="">— None —</option>
-            </select>
-          </div>
-          <div class="field" id="ukcrc-sec2-wrap" style="display: none">
-            <label for="ukcrc-sec2"
-              >Secondary category 2
-              <span style="color: var(--muted); font-weight: 400"
-                >(optional)</span
-              ></label
-            >
-            <select id="ukcrc-sec2" onchange="ukcrcUpdate()">
-              <option value="">— None —</option>
-            </select>
+          <div
+            class="ukcrc-secondary"
+            id="ukcrc-secondary-wrap"
+            style="display: none"
+          >
+            <div class="field">
+              <label for="ukcrc-sec1"
+                >Secondary category 1
+                <span style="color: var(--muted); font-weight: 400"
+                  >(optional)</span
+                ></label
+              >
+              <select id="ukcrc-sec1" onchange="ukcrcUpdate()">
+                <option value="">— None —</option>
+              </select>
+            </div>
+            <div class="field" id="ukcrc-sec2-col" style="display: none">
+              <label for="ukcrc-sec2"
+                >Secondary category 2
+                <span style="color: var(--muted); font-weight: 400"
+                  >(optional)</span
+                ></label
+              >
+              <select id="ukcrc-sec2" onchange="ukcrcUpdate()">
+                <option value="">— None —</option>
+              </select>
+            </div>
           </div>
           <div class="ukcrc-tags" id="ukcrc-tags"></div>
+        </div>
 
-          <div class="section-label">Regulatory Classification</div>
+        <!-- REGULATORY & CLASSIFICATION -->
+        <div class="section-label" style="margin-top: 24px">
+          Regulatory &amp; Study Classification
+        </div>
+        <div class="grid-3">
           <div class="field">
             <label>REC Approval Required?</label>
+            <span class="hint">Does this study require REC approval?</span>
             <div class="radio-group">
               <label class="radio-pill" id="pill-rec-appr-y"
                 ><input
@@ -772,6 +891,7 @@
           </div>
           <div class="field">
             <label>Study Phase</label>
+            <span class="hint">Select the applicable phase</span>
             <div class="radio-group">
               <label class="radio-pill" id="pill-phase-i"
                 ><input
@@ -832,6 +952,7 @@
           </div>
           <div class="field">
             <label>First in Human Project?</label>
+            <span class="hint">Is this a first-in-human study?</span>
             <div class="radio-group">
               <label class="radio-pill" id="pill-fih-y"
                 ><input
@@ -855,244 +976,104 @@
           </div>
         </div>
 
-        <!-- RIGHT: INVESTIGATOR -->
-        <div class="form-col investigator-col">
-          <div class="col-header">
-            <span class="col-badge" style="background: var(--success)"
-              >Investigator</span
-            >
-            <div>
-              <div class="col-title">Investigator completes</div>
-              <div class="col-sub">Sent to investigator to fill in</div>
-            </div>
-          </div>
-
-          <div class="section-label">Project Summary</div>
-          <div class="field">
-            <label for="summary">Project summary</label>
-            <span class="hint"
-              >300 word summary (if not available via HRA or RDN CPMS)</span
-            >
-            <textarea
-              id="summary"
-              placeholder="Enter a project summary of up to 300 words..."
-            ></textarea>
-            <div class="word-count" id="word-count">0 / 300 words</div>
-          </div>
-
-          <div class="section-label">Project Details</div>
-          <div class="field">
-            <label>Is the project sensitive?</label>
-            <span class="hint"
-              >Y = commercially sensitive or not-for-public-release</span
-            >
-            <div class="radio-group">
-              <label class="radio-pill" id="pill-sens-y"
-                ><input
-                  type="radio"
-                  name="sensitive"
-                  value="Y"
-                  onchange="updatePills('sensitive')"
-                />
-                Yes</label
-              >
-              <label class="radio-pill" id="pill-sens-n"
-                ><input
-                  type="radio"
-                  name="sensitive"
-                  value="N"
-                  onchange="updatePills('sensitive')"
-                />
-                No</label
-              >
-            </div>
-          </div>
-
-          <div class="section-label">Patient Recruitment</div>
-          <div class="nested-box">
-            <div
-              style="
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                flex-wrap: wrap;
-                gap: 10px;
-              "
-            >
-              <span
-                style="font-size: 13px; font-weight: 500; color: var(--navy)"
-                >Does the study recruit patients?</span
-              >
-              <div class="radio-group" style="margin-top: 0">
-                <label class="radio-pill" id="pill-rec-y"
-                  ><input
-                    type="radio"
-                    name="recruits"
-                    value="Y"
-                    onchange="
-                      toggleRecruits();
-                      updatePills('recruits');
-                    "
-                  />
-                  Yes</label
-                >
-                <label class="radio-pill" id="pill-rec-n"
-                  ><input
-                    type="radio"
-                    name="recruits"
-                    value="N"
-                    onchange="
-                      toggleRecruits();
-                      updatePills('recruits');
-                    "
-                  />
-                  No</label
-                >
-              </div>
-            </div>
-            <div class="recruits-count" id="recruited-row">
-              <div class="field" style="margin-top: 10px; margin-bottom: 0">
-                <label for="recruited">Number of patients recruited</label>
-                <span class="hint" id="fin-year-hint"
-                  >1 April 2025 – 31 March 2026</span
-                >
-                <input
-                  type="number"
-                  id="recruited"
-                  min="0"
-                  placeholder="e.g. 42"
-                  style="max-width: 160px; margin-top: 5px"
-                />
-              </div>
-            </div>
-          </div>
-
-          <div class="section-label">Paediatric Research</div>
-          <div class="field">
-            <label>Paediatric research (if applicable)?</label>
-            <div class="radio-group">
-              <label class="radio-pill" id="pill-paed-y"
-                ><input
-                  type="radio"
-                  name="paediatric"
-                  value="Y"
-                  onchange="updatePills('paediatric')"
-                />
-                Yes</label
-              >
-              <label class="radio-pill" id="pill-paed-n"
-                ><input
-                  type="radio"
-                  name="paediatric"
-                  value="N"
-                  onchange="updatePills('paediatric')"
-                />
-                No</label
-              >
-              <label class="radio-pill selected" id="pill-paed-na"
-                ><input
-                  type="radio"
-                  name="paediatric"
-                  value="N/A"
-                  checked
-                  onchange="updatePills('paediatric')"
-                />
-                N/A</label
-              >
-            </div>
-          </div>
+        <!-- PATIENT RECRUITMENT -->
+        <div class="section-label" style="margin-top: 24px">
+          Patient Recruitment
         </div>
-      </div>
-
-      <!-- GENERATE & SEND PANEL (coordinator mode only) -->
-      <div class="generate-panel" id="generate-panel">
-        <h3>&#128279; Generate &amp; Send to Investigator</h3>
-        <p>
-          Fill in what you know above, then generate a link. The investigator
-          opens the link and sees your pre-filled information — they complete
-          the rest and submit directly to you.
-        </p>
-        <div class="generate-row">
-          <button
-            class="btn btn-primary"
-            onclick="generateLink()"
-            style="height: 40px"
-          >
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              style="width: 15px; height: 15px"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244"
+        <div class="nested-box">
+          <div class="nested-row">
+            <span class="nested-label">Does the study recruit patients?</span>
+            <div class="radio-group" style="margin-top: 0">
+              <label class="radio-pill" id="pill-rec-y"
+                ><input
+                  type="radio"
+                  name="recruits"
+                  value="Y"
+                  onchange="
+                    toggleRecruits();
+                    updatePills('recruits');
+                  "
+                />
+                Yes</label
+              >
+              <label class="radio-pill" id="pill-rec-n"
+                ><input
+                  type="radio"
+                  name="recruits"
+                  value="N"
+                  onchange="
+                    toggleRecruits();
+                    updatePills('recruits');
+                  "
+                />
+                No</label
+              >
+            </div>
+          </div>
+          <div class="recruits-count" id="recruited-row">
+            <div class="field">
+              <label for="recruited">Number of patients recruited</label>
+              <span class="hint" id="fin-year-hint"
+                >1 April 2025 – 31 March 2026</span
+              >
+              <input
+                type="number"
+                id="recruited"
+                min="0"
+                placeholder="e.g. 42"
+                style="max-width: 180px; margin-top: 6px"
               />
-            </svg>
-            Generate Link
-          </button>
+            </div>
+          </div>
         </div>
-        <div class="link-box" id="link-box">
-          <div
-            style="
-              font-size: 11px;
-              font-weight: 600;
-              text-transform: uppercase;
-              letter-spacing: 0.08em;
-              color: #92400e;
-              margin-bottom: 8px;
-            "
+
+        <!-- PAEDIATRIC RESEARCH -->
+        <div class="section-label" style="margin-top: 24px">
+          Paediatric Research
+        </div>
+        <div class="field">
+          <label>Paediatric research (if applicable)?</label>
+          <span class="hint"
+            >Indicate whether this study involves paediatric research</span
           >
-            Step 2 — Send link to investigator
-          </div>
-          <div class="link-copy-row">
-            <input type="text" class="link-url" id="link-url" readonly />
-            <button class="btn-copy" id="btn-copy" onclick="copyLink()">
-              Copy link
-            </button>
-          </div>
-          <div class="link-hint">
-            All your pre-filled information is encoded in the link. Enter the
-            investigator's email and click Send.
-          </div>
-          <div class="send-row">
-            <label for="inv-to-email">Investigator email:</label>
-            <input
-              type="email"
-              id="inv-to-email"
-              placeholder="researcher@leeds.ac.uk"
-            />
-            <button class="btn-send" onclick="sendToInvestigator()">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"
-                />
-              </svg>
-              Send
-            </button>
-          </div>
-          <div class="send-confirm" id="send-confirm">
-            ✓ Email client opened — check your email app to send.
+          <div class="radio-group">
+            <label class="radio-pill" id="pill-paed-y"
+              ><input
+                type="radio"
+                name="paediatric"
+                value="Y"
+                onchange="updatePills('paediatric')"
+              />
+              Yes</label
+            >
+            <label class="radio-pill" id="pill-paed-n"
+              ><input
+                type="radio"
+                name="paediatric"
+                value="N"
+                onchange="updatePills('paediatric')"
+              />
+              No</label
+            >
+            <label class="radio-pill selected" id="pill-paed-na"
+              ><input
+                type="radio"
+                name="paediatric"
+                value="N/A"
+                checked
+                onchange="updatePills('paediatric')"
+              />
+              N/A</label
+            >
           </div>
         </div>
       </div>
 
-      <!-- INVESTIGATOR SUBMIT FOOTER -->
+      <!-- FOOTER -->
       <div class="card-footer" id="inv-footer" style="display: none">
         <div class="footer-msg" id="footer-msg"></div>
         <div class="btn-row">
-          <button class="btn" onclick="clearInvFields()">
-            Clear my fields
-          </button>
+          <button class="btn" onclick="clearForm()">Clear</button>
           <button class="btn" onclick="downloadForm()">
             <svg
               viewBox="0 0 24 24"
@@ -1100,8 +1081,8 @@
               stroke="currentColor"
               stroke-width="2"
               style="
-                width: 13px;
-                height: 13px;
+                width: 14px;
+                height: 14px;
                 display: inline;
                 margin-right: 4px;
               "
@@ -1122,6 +1103,11 @@
             ✉ Send to Leeds BRC via Email
           </button>
         </div>
+      </div>
+
+      <div class="coordinator-idle" id="coordinator-idle">
+        Fill in the fields above, then click <strong>Generate Link</strong> to
+        create the investigator link.
       </div>
     </div>
 
@@ -1155,46 +1141,47 @@
         "Disputed Aetiology and Other",
       ];
 
-      // ── URL param helpers ────────────────────────────────────────
       var params = new URLSearchParams(window.location.search);
       var isInvestigator = params.get("mode") === "inv";
 
-      // ── On load: investigator mode ───────────────────────────────
+      // ── Mode setup ───────────────────────────────────────────────
       if (isInvestigator) {
-        // Switch badges
-        document.getElementById("mode-badge").textContent = "Investigator Form";
-        document.getElementById("mode-badge").className =
-          "mode-badge investigator";
-        // Show investigator elements
+        document.getElementById("coordinator-panel").style.display = "none";
+        document.getElementById("coordinator-idle").style.display = "none";
         document.getElementById("inv-banner").style.display = "block";
         document.getElementById("inv-footer").style.display = "flex";
-        // Hide coordinator elements
-        document.getElementById("generate-panel").style.display = "none";
-        // Show project band
-        var title = params.get("title") || "";
-        if (title) {
-          document.getElementById("project-band").style.display = "flex";
-          document.getElementById("project-band-text").textContent =
-            decodeURIComponent(title);
-          document.getElementById("project-title-input").value =
-            decodeURIComponent(title);
-        }
-        // Pre-fill coordinator fields and mark them
-        var prefields = ["iras", "cpms", "rec", "status"];
-        prefields.forEach(function (id) {
+        document.getElementById("mode-badge").textContent = "Investigator Form";
+
+        // Pre-fill all fields from URL
+        var textFields = [
+          "grant-ref",
+          "short-title",
+          "project-title-input",
+          "iras",
+          "cpms",
+          "rec",
+          "status",
+          "summary",
+          "recruited",
+          "inv-name",
+        ];
+        textFields.forEach(function (id) {
           var val = params.get(id);
           if (val) {
             var el = document.getElementById(id);
-            if (el) {
-              el.value = decodeURIComponent(val);
-              el.classList.add("prefilled");
-              el.readOnly = el.tagName === "INPUT";
-            }
+            if (el) el.value = decodeURIComponent(val);
           }
         });
+
         // Radio fields
-        var radioFields = ["rec_approval", "study_phase", "first_in_human"];
-        radioFields.forEach(function (name) {
+        [
+          "sensitive",
+          "rec_approval",
+          "study_phase",
+          "first_in_human",
+          "recruits",
+          "paediatric",
+        ].forEach(function (name) {
           var val = params.get(name);
           if (val) {
             var r = document.querySelector(
@@ -1207,41 +1194,53 @@
             if (r) {
               r.checked = true;
               updatePills(name);
-              r.disabled = true;
-              r.closest(".field") &&
-                (r.closest(".field").style.opacity = "0.7");
             }
           }
         });
+
         // UKCRC
-        var uPrimary = params.get("ukcrc_primary");
-        var uSec1 = params.get("ukcrc_sec1");
-        var uSec2 = params.get("ukcrc_sec2");
-        if (uPrimary) {
+        var uP = params.get("ukcrc_primary");
+        if (uP) {
           document.getElementById("ukcrc-primary").value =
-            decodeURIComponent(uPrimary);
-          document.getElementById("ukcrc-primary").disabled = true;
+            decodeURIComponent(uP);
           ukcrcUpdate();
-          if (uSec1) {
+          var uS1 = params.get("ukcrc_sec1");
+          if (uS1) {
             document.getElementById("ukcrc-sec1").value =
-              decodeURIComponent(uSec1);
-            document.getElementById("ukcrc-sec1").disabled = true;
+              decodeURIComponent(uS1);
             ukcrcUpdate();
           }
-          if (uSec2) {
+          var uS2 = params.get("ukcrc_sec2");
+          if (uS2) {
             document.getElementById("ukcrc-sec2").value =
-              decodeURIComponent(uSec2);
-            document.getElementById("ukcrc-sec2").disabled = true;
+              decodeURIComponent(uS2);
             ukcrcUpdate();
           }
         }
-        // Disable coordinator col inputs visually
-        document.querySelector(".coordinator-col").style.opacity = "0.75";
-        document.querySelector(".coordinator-col .col-sub").textContent =
-          "Pre-filled by coordinator";
+
+        // Trigger recruited row if needed
+        toggleRecruits();
+
+        // Update word count if summary pre-filled
+        var summaryEl = document.getElementById("summary");
+        if (summaryEl && summaryEl.value) {
+          var words = summaryEl.value.trim().split(/\s+/).length;
+          var wc = document.getElementById("word-count");
+          wc.textContent = words + " / 300 words";
+          wc.className = "word-count" + (words > 300 ? " over" : "");
+        }
+      } else {
+        // Coordinator mode
+        document.getElementById("inv-banner").style.display = "none";
+        document.getElementById("inv-footer").style.display = "none";
+        document.getElementById("coordinator-idle").style.display = "none";
+        document.getElementById("mode-badge").textContent = "Coordinator";
+        document.getElementById("mode-badge").style.background = "#eef4fa";
+        document.getElementById("mode-badge").style.color = "var(--navy)";
+        document.getElementById("mode-badge").style.borderColor = "#b0cae0";
       }
 
-      // Dynamic financial year
+      // Financial year
       (function () {
         var now = new Date();
         var yr = now.getFullYear();
@@ -1254,18 +1253,13 @@
       })();
 
       // Word count
-      var summaryEl = document.getElementById("summary");
-      if (summaryEl) {
-        summaryEl.addEventListener("input", function () {
-          var words =
-            this.value.trim() === ""
-              ? 0
-              : this.value.trim().split(/\s+/).length;
-          var el = document.getElementById("word-count");
-          el.textContent = words + " / 300 words";
-          el.className = "word-count" + (words > 300 ? " over" : "");
-        });
-      }
+      document.getElementById("summary").addEventListener("input", function () {
+        var words =
+          this.value.trim() === "" ? 0 : this.value.trim().split(/\s+/).length;
+        var el = document.getElementById("word-count");
+        el.textContent = words + " / 300 words";
+        el.className = "word-count" + (words > 300 ? " over" : "");
+      });
 
       function toggleRecruits() {
         var yes = document.querySelector('input[name="recruits"][value="Y"]');
@@ -1300,50 +1294,50 @@
         var primary = document.getElementById("ukcrc-primary").value;
         var sec1El = document.getElementById("ukcrc-sec1");
         var sec2El = document.getElementById("ukcrc-sec2");
+        var secWrap = document.getElementById("ukcrc-secondary-wrap");
+        var sec2Col = document.getElementById("ukcrc-sec2-col");
         if (!primary) {
-          document.getElementById("ukcrc-sec1-wrap").style.display = "none";
-          document.getElementById("ukcrc-sec2-wrap").style.display = "none";
+          secWrap.style.display = "none";
           sec1El.value = "";
           sec2El.value = "";
           ukcrcRenderTags();
           return;
         }
-        document.getElementById("ukcrc-sec1-wrap").style.display = "block";
+        secWrap.style.display = "flex";
         ukcrcPopulate(sec1El, primary, "");
         var sec1 = sec1El.value;
         if (sec1) {
-          document.getElementById("ukcrc-sec2-wrap").style.display = "block";
+          sec2Col.style.display = "block";
           ukcrcPopulate(sec2El, primary, sec1);
         } else {
-          document.getElementById("ukcrc-sec2-wrap").style.display = "none";
+          sec2Col.style.display = "none";
           sec2El.value = "";
         }
         ukcrcRenderTags();
       }
 
       function ukcrcRenderTags() {
-        var primary = document.getElementById("ukcrc-primary").value;
-        var sec1 = document.getElementById("ukcrc-sec1").value;
-        var sec2 = document.getElementById("ukcrc-sec2").value;
+        var p = document.getElementById("ukcrc-primary").value;
+        var s1 = document.getElementById("ukcrc-sec1").value;
+        var s2 = document.getElementById("ukcrc-sec2").value;
         var c = document.getElementById("ukcrc-tags");
         c.innerHTML = "";
-        if (primary) {
+        if (p) {
           var t = document.createElement("span");
           t.className = "ukcrc-tag primary";
-          t.innerHTML =
-            '<span class="ukcrc-tag-label">Primary</span>' + primary;
+          t.innerHTML = '<span class="ukcrc-tag-label">Primary</span>' + p;
           c.appendChild(t);
         }
-        if (sec1) {
+        if (s1) {
           var t2 = document.createElement("span");
           t2.className = "ukcrc-tag secondary";
-          t2.innerHTML = '<span class="ukcrc-tag-label">Sec</span>' + sec1;
+          t2.innerHTML = '<span class="ukcrc-tag-label">Sec</span>' + s1;
           c.appendChild(t2);
         }
-        if (sec2) {
+        if (s2) {
           var t3 = document.createElement("span");
           t3.className = "ukcrc-tag secondary";
-          t3.innerHTML = '<span class="ukcrc-tag-label">Sec</span>' + sec2;
+          t3.innerHTML = '<span class="ukcrc-tag-label">Sec</span>' + s2;
           c.appendChild(t3);
         }
       }
@@ -1359,7 +1353,7 @@
         return out;
       }
 
-      // ── Generate link ────────────────────────────────────────────
+      // ── Generate link (coordinator) ──────────────────────────────
       function generateLink() {
         var title = document.getElementById("project-title-input").value.trim();
         if (!title) {
@@ -1369,22 +1363,48 @@
         var base = window.location.origin + window.location.pathname;
         var p = new URLSearchParams();
         p.set("mode", "inv");
-        p.set("title", title);
-        // Coordinator-filled fields
-        var coordFields = ["iras", "cpms", "rec", "status"];
-        coordFields.forEach(function (id) {
-          var v = document.getElementById(id).value.trim();
-          if (v) p.set(id, v);
+
+        // All text fields
+        var textFields = [
+          "grant-ref",
+          "short-title",
+          "project-title-input",
+          "iras",
+          "cpms",
+          "rec",
+          "status",
+          "summary",
+          "recruited",
+        ];
+        textFields.forEach(function (id) {
+          console.log(id, document.getElementById(id));
+          var el = document.getElementById(id);
+
+          if (!el) {
+            console.error("Missing element:", id);
+            return;
+          }
+
+          var v = el.value.trim();
+
+          if (v) {
+            p.set(id, v);
+          }
         });
+
         // Radio fields
-        ["rec_approval", "study_phase", "first_in_human"].forEach(
-          function (name) {
-            var r = document.querySelector(
-              'input[name="' + name + '"]:checked',
-            );
-            if (r && r.value !== "Not answered") p.set(name, r.value);
-          },
-        );
+        [
+          "sensitive",
+          "rec_approval",
+          "study_phase",
+          "first_in_human",
+          "recruits",
+          "paediatric",
+        ].forEach(function (name) {
+          var r = document.querySelector('input[name="' + name + '"]:checked');
+          if (r) p.set(name, r.value);
+        });
+
         // UKCRC
         var uP = document.getElementById("ukcrc-primary").value;
         var uS1 = document.getElementById("ukcrc-sec1").value;
@@ -1426,9 +1446,9 @@
         var bodyText =
           "Dear Colleague,\n\nPlease could you provide the following information for the study listed below, identified for inclusion in BRC reporting as PI or Co-I receiving BRC funding. This information is required for annual reporting back to the NIHR.\n\n" +
           title +
-          "\n\nClick the link below to open the form. Some fields have already been pre-filled — please complete the remaining sections and submit.\n\n" +
+          "\n\nClick the link below to open the form. Some fields have already been pre-filled — please review, edit if needed, complete any remaining fields, and submit.\n\n" +
           link +
-          "\n\nPlease complete as soon as possible.\n\nKind regards,\nLeeds BRC Coordinator\nk.o.ohuchukwu@leeds.ac.uk";
+          "\n\nPlease complete as soon as possible.\n\nKind regards,\nKevin Ohuchukwu\nInformation, Impact and Reporting Coordinator\nNIHR Leeds Biomedical Research Centre\nk.o.ohuchukwu@leeds.ac.uk";
         window.open(
           "mailto:" +
             toEmail +
@@ -1444,7 +1464,7 @@
         }, 5000);
       }
 
-      // ── Submit (investigator) ────────────────────────────────────
+      // ── Helpers ──────────────────────────────────────────────────
       function getVal(id) {
         var el = document.getElementById(id);
         return el ? el.value : "";
@@ -1459,26 +1479,20 @@
         el.className = "footer-msg " + (type || "");
       }
 
-      function validate() {
-        if (!getVal("status") && !isInvestigator) {
-          showMsg("Please select a project status.", "error");
-          return false;
-        }
-        return true;
-      }
-
+      // ── Submit ───────────────────────────────────────────────────
       function submitForm() {
+        if (!getVal("project-title-input")) {
+          showMsg("Please enter the project title.", "error");
+          return;
+        }
         var recruits = getRadio("recruits");
-        var projectTitle = decodeURIComponent(
-          params.get("title") ||
-            document.getElementById("project-title-input").value ||
-            "",
-        );
+        var projectTitle = getVal("project-title-input");
         var dateStr = new Date().toLocaleDateString("en-GB", {
           day: "numeric",
           month: "long",
           year: "numeric",
         });
+        var invName = getVal("inv-name") || "Investigator";
 
         var body =
           "Dear Dr Ohuchukwu,\r\n\r\n" +
@@ -1487,9 +1501,16 @@
           "\r\n  NIHR BRC ANNUAL REPORTING \u2014 STUDY INFORMATION FORM\r\n  Leeds Biomedical Research Centre\r\n" +
           "\u2550".repeat(60) +
           "\r\n\r\n" +
-          "  STUDY\r\n  " +
+          "  PROJECT IDENTIFICATION\r\n  " +
           "\u2500".repeat(56) +
-          "\r\n  " +
+          "\r\n" +
+          "  Grant / Local Ref No :  " +
+          (getVal("grant-ref") || "N/A") +
+          "\r\n" +
+          "  Short Project Title  :  " +
+          (getVal("short-title") || "N/A") +
+          "\r\n" +
+          "  Full Project Title   :  " +
           projectTitle +
           "\r\n\r\n" +
           "  REGISTRATION IDs\r\n  " +
@@ -1514,7 +1535,9 @@
           "\u2500".repeat(56) +
           "\r\n" +
           "  Sensitive             :  " +
-          (getRadio("sensitive") === "Y" ? "YES" : "NO") +
+          (getRadio("sensitive") === "Y"
+            ? "YES \u2014 Commercially sensitive"
+            : "NO") +
           "\r\n" +
           "  Project status        :  " +
           (getVal("status") || "Not selected") +
@@ -1535,7 +1558,8 @@
           "\r\n\r\n" +
           "  UKCRC HEALTH CATEGORY\r\n  " +
           "\u2500".repeat(56) +
-          "\r\n  " +
+          "\r\n" +
+          "  " +
           getUkcrcSummary() +
           "\r\n\r\n" +
           "  REGULATORY & CLASSIFICATION\r\n  " +
@@ -1555,7 +1579,10 @@
           dateStr +
           "\r\n" +
           "\u2550".repeat(60) +
-          "\r\n\r\nKind regards,\r\n[Investigator Name]\r\n";
+          "\r\n\r\n" +
+          "Kind regards,\r\n" +
+          invName +
+          "\r\n";
 
         var subject = encodeURIComponent(
           "NIHR BRC Study Information \u2014 " + projectTitle,
@@ -1566,11 +1593,14 @@
           "&body=" +
           encodeURIComponent(body);
 
+        // POST to Google Sheets
         var SCRIPT_URL =
           "https://script.google.com/macros/s/AKfycbwhOXuGKdrZDXfJiYffaOiOvZWt-7zjFDNp8mHIbZtyGSeFdimhia95H2g7QkipU3DY/exec";
         fetch(SCRIPT_URL, {
           method: "POST",
           body: JSON.stringify({
+            grant_ref: getVal("grant-ref"),
+            short_title: getVal("short-title"),
             project_title: projectTitle,
             iras_id: getVal("iras"),
             rec_id: getVal("rec"),
@@ -1586,6 +1616,7 @@
             rec_approval_required: getRadio("rec_approval"),
             study_phase: getRadio("study_phase"),
             first_in_human: getRadio("first_in_human"),
+            investigator_name: invName,
             submitted_at: new Date().toLocaleString("en-GB"),
           }),
         }).catch(function () {});
@@ -1601,39 +1632,35 @@
         btn.innerHTML = "\u2709 Open Email Again";
         btn.style.background = "var(--success)";
         showMsg(
-          "\u2709 Your email client is now open — click SEND to deliver to Leeds BRC. If it did not open, click the button again.",
+          "\u2709 Your email client is now open. Click SEND to deliver to Leeds BRC. If it did not open, click the button again.",
           "success",
         );
       }
 
       function downloadForm() {
-        var projectTitle = decodeURIComponent(
-          params.get("title") ||
-            document.getElementById("project-title-input").value ||
-            "(not set)",
-        );
+        var projectTitle = getVal("project-title-input") || "(not set)";
+        var recruits = getRadio("recruits");
         var dateStr = new Date().toLocaleDateString("en-GB", {
           day: "numeric",
           month: "long",
           year: "numeric",
         });
-        var recruits = getRadio("recruits");
-        var uP = getVal("ukcrc-primary") || "Not selected";
+        var uP = getVal("ukcrc-primary") || "";
         var uS1 = getVal("ukcrc-sec1");
         var uS2 = getVal("ukcrc-sec2");
-        var ukcrcTagsHtml = "";
-        if (uP !== "Not selected")
-          ukcrcTagsHtml +=
+        var ukcrcHtml = "";
+        if (uP)
+          ukcrcHtml +=
             '<span style="display:inline-block;padding:3px 10px;border-radius:999px;font-size:11px;font-weight:600;background:#003865;color:#fff;margin-right:4px">' +
             uP +
             "</span>";
         if (uS1)
-          ukcrcTagsHtml +=
+          ukcrcHtml +=
             '<span style="display:inline-block;padding:3px 10px;border-radius:999px;font-size:11px;font-weight:600;background:#dbeafe;color:#1e3a5f;margin-right:4px">' +
             uS1 +
             "</span>";
         if (uS2)
-          ukcrcTagsHtml +=
+          ukcrcHtml +=
             '<span style="display:inline-block;padding:3px 10px;border-radius:999px;font-size:11px;font-weight:600;background:#dbeafe;color:#1e3a5f;margin-right:4px">' +
             uS2 +
             "</span>";
@@ -1643,9 +1670,17 @@
           '<div class="h"><div class="hl">NIHR BRC Annual Reporting</div><div class="ht">Study Information Form</div><div class="hs">Completed: ' +
           dateStr +
           "</div></div>" +
-          '<div class="b"><div style="background:#eef4fa;border:1px solid #c8d8e8;border-radius:8px;padding:14px 18px;margin-bottom:20px"><div style="font-size:11px;font-weight:700;text-transform:uppercase;color:#003865;margin-bottom:5px">Project</div><div style="font-size:14px;font-weight:500">' +
+          '<div class="b">' +
+          '<div class="s">Project Identification</div><table>' +
+          '<tr><td class="l">Grant / Local Ref No</td><td>' +
+          (getVal("grant-ref") || "N/A") +
+          "</td></tr>" +
+          '<tr><td class="l">Short Project Title</td><td>' +
+          (getVal("short-title") || "N/A") +
+          "</td></tr>" +
+          '<tr><td class="l">Full Project Title</td><td>' +
           projectTitle +
-          "</div></div>" +
+          "</td></tr></table>" +
           '<div class="s">Registration IDs</div><table>' +
           '<tr><td class="l">IRAS ID</td><td>' +
           (getVal("iras") || "N/A") +
@@ -1687,7 +1722,7 @@
               : '<span class="t tgy">N/A</span>') +
           "</td></tr></table>" +
           '<div class="s">UKCRC Health Category</div><div>' +
-          (ukcrcTagsHtml || '<span class="t tgy">Not selected</span>') +
+          (ukcrcHtml || '<span class="t tgy">Not selected</span>') +
           "</div>" +
           '<div class="s">Regulatory &amp; Classification</div><table>' +
           '<tr><td class="l">REC Approval Required</td><td>' +
@@ -1707,7 +1742,7 @@
               ? '<span class="t tgy">No</span>'
               : '<span class="t tgy">Not answered</span>') +
           "</td></tr></table>" +
-          '</div><div class="f"><div>Leeds Biomedical Research Centre &nbsp;·&nbsp; NIHR<br><strong>k.o.ohuchukwu@leeds.ac.uk</strong></div><div style="text-align:right">Completed ' +
+          '</div><div class="f"><div>Leeds BRC &nbsp;·&nbsp; NIHR<br><strong>k.o.ohuchukwu@leeds.ac.uk</strong></div><div style="text-align:right">Completed ' +
           dateStr +
           "</div></div></div></body></html>";
 
@@ -1725,18 +1760,24 @@
         URL.revokeObjectURL(url);
       }
 
-      function clearInvFields() {
-        ["summary", "recruited"].forEach(function (id) {
+      function clearForm() {
+        [
+          "grant-ref",
+          "short-title",
+          "project-title-input",
+          "iras",
+          "cpms",
+          "rec",
+          "summary",
+          "recruited",
+          "inv-name",
+        ].forEach(function (id) {
           var el = document.getElementById(id);
           if (el) el.value = "";
         });
-        ["sensitive", "recruits", "paediatric"].forEach(function (name) {
-          document
-            .querySelectorAll('input[name="' + name + '"]')
-            .forEach(function (r) {
-              r.checked = false;
-            });
-          updatePills(name);
+        document.getElementById("status").value = "";
+        document.querySelectorAll('input[type="radio"]').forEach(function (r) {
+          r.checked = false;
         });
         var na = document.querySelector(
           'input[name="paediatric"][value="N/A"]',
@@ -1745,13 +1786,30 @@
           na.checked = true;
           updatePills("paediatric");
         }
-        var rrow = document.getElementById("recruited-row");
-        if (rrow) rrow.style.display = "none";
-        var wc = document.getElementById("word-count");
-        if (wc) {
-          wc.textContent = "0 / 300 words";
-          wc.className = "word-count";
+        var phna = document.querySelector(
+          'input[name="study_phase"][value="N/A"]',
+        );
+        if (phna) {
+          phna.checked = true;
+          updatePills("study_phase");
         }
+        document.querySelectorAll(".radio-pill").forEach(function (p) {
+          p.classList.remove("selected");
+        });
+        document.getElementById("pill-paed-na").classList.add("selected");
+        document.getElementById("pill-phase-na").classList.add("selected");
+        document.getElementById("recruited-row").style.display = "none";
+        var wc = document.getElementById("word-count");
+        wc.textContent = "0 / 300 words";
+        wc.className = "word-count";
+        document.getElementById("ukcrc-primary").value = "";
+        document.getElementById("ukcrc-sec1").innerHTML =
+          '<option value="">— None —</option>';
+        document.getElementById("ukcrc-sec2").innerHTML =
+          '<option value="">— None —</option>';
+        document.getElementById("ukcrc-secondary-wrap").style.display = "none";
+        document.getElementById("ukcrc-sec2-col").style.display = "none";
+        document.getElementById("ukcrc-tags").innerHTML = "";
         showMsg("", "");
       }
     </script>
