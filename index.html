@@ -572,8 +572,9 @@
         <div class="card-head-label">NIHR BRC Annual Reporting</div>
         <div class="card-head-title">Study Information Request Form</div>
         <div class="card-head-sub">
-          Required for annual reporting back to the NIHR. Identified for
-          inclusion in BRC reporting where PI or Co-I receive BRC funding.
+          Required for quarterly/annual reporting back to the NIHR. Identified
+          for inclusion in BRC reporting where PI or Co-I receive BRC funding
+          and or in use of BRC infrastructure.
         </div>
       </div>
 
@@ -697,6 +698,17 @@
             id="project-title-input"
             placeholder="Enter full project title..."
           />
+        </div>
+        <div class="field" style="margin-top: 14px">
+          <label for="project-start-date">Project Start Date</label>
+          <span class="hint">Date the project commenced</span>
+          <input type="date" id="project-start-date" />
+        </div>
+
+        <div class="field" style="margin-top: 14px">
+          <label for="project-end-date">Project End Date</label>
+          <span class="hint">Expected or actual project completion date</span>
+          <input type="date" id="project-end-date" />
         </div>
 
         <!-- REGISTRATION IDs -->
@@ -1157,6 +1169,8 @@
           "grant-ref",
           "short-title",
           "project-title-input",
+          "project-start-date",
+          "project-end-date",
           "iras",
           "cpms",
           "rec",
@@ -1355,11 +1369,6 @@
 
       // ── Generate link (coordinator) ──────────────────────────────
       function generateLink() {
-        var title = document.getElementById("project-title-input").value.trim();
-        if (!title) {
-          alert("Please enter a project title first.");
-          return;
-        }
         var base = window.location.origin + window.location.pathname;
         var p = new URLSearchParams();
         p.set("mode", "inv");
@@ -1369,6 +1378,8 @@
           "grant-ref",
           "short-title",
           "project-title-input",
+          "project-start-date",
+          "project-end-date",
           "iras",
           "cpms",
           "rec",
@@ -1376,8 +1387,10 @@
           "summary",
           "recruited",
         ];
+
+        var hasData = false;
+
         textFields.forEach(function (id) {
-          console.log(id, document.getElementById(id));
           var el = document.getElementById(id);
 
           if (!el) {
@@ -1388,9 +1401,15 @@
           var v = el.value.trim();
 
           if (v) {
+            hasData = true;
             p.set(id, v);
           }
         });
+
+        if (!hasData) {
+          alert("Please fill at least one field before generating a link.");
+          return;
+        }
 
         // Radio fields
         [
@@ -1406,15 +1425,17 @@
         });
 
         // UKCRC
-        var uP = document.getElementById("ukcrc-primary").value;
-        var uS1 = document.getElementById("ukcrc-sec1").value;
-        var uS2 = document.getElementById("ukcrc-sec2").value;
+        var uP = document.getElementById("ukcrc-primary")?.value || "";
+        var uS1 = document.getElementById("ukcrc-sec1")?.value || "";
+        var uS2 = document.getElementById("ukcrc-sec2")?.value || "";
         if (uP) p.set("ukcrc_primary", uP);
         if (uS1) p.set("ukcrc_sec1", uS1);
         if (uS2) p.set("ukcrc_sec2", uS2);
 
-        var url = base + "?" + p.toString();
-        document.getElementById("link-url").value = url;
+        var generatedLink = base + "?" + p.toString();
+
+        //  document.getElementById("generated-link").value = generatedLink;
+        document.getElementById("link-url").value = generatedLink;
         document.getElementById("link-box").style.display = "block";
       }
 
@@ -1513,6 +1534,12 @@
           "  Full Project Title   :  " +
           projectTitle +
           "\r\n\r\n" +
+          "  Project Start Date   :  " +
+          (getVal("project-start-date") || "N/A") +
+          "\r\n" +
+          "  Project End Date     :  " +
+          (getVal("project-end-date") || "N/A") +
+          "\r\n\r\n" +
           "  REGISTRATION IDs\r\n  " +
           "\u2500".repeat(56) +
           "\r\n" +
@@ -1602,6 +1629,8 @@
             grant_ref: getVal("grant-ref"),
             short_title: getVal("short-title"),
             project_title: projectTitle,
+            project_start_date: getVal("project-start-date"),
+            project_end_date: getVal("project-end-date"),
             iras_id: getVal("iras"),
             rec_id: getVal("rec"),
             cpms_id: getVal("cpms"),
@@ -1680,6 +1709,12 @@
           "</td></tr>" +
           '<tr><td class="l">Full Project Title</td><td>' +
           projectTitle +
+          "</td></tr></table>" +
+          '<tr><td class="l">Project Start Date</td><td>' +
+          (getVal("project-start-date") || "N/A") +
+          "</td></tr>" +
+          '<tr><td class="l">Project End Date</td><td>' +
+          (getVal("project-end-date") || "N/A") +
           "</td></tr></table>" +
           '<div class="s">Registration IDs</div><table>' +
           '<tr><td class="l">IRAS ID</td><td>' +
@@ -1765,6 +1800,8 @@
           "grant-ref",
           "short-title",
           "project-title-input",
+          "project-start-date",
+          "project-end-date",
           "iras",
           "cpms",
           "rec",
